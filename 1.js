@@ -67,3 +67,35 @@ for (let i = 0; i < arr.length; i++) {
   }
 }
 console.log(arr);
+// 2,3,1,5,6,4
+var numArr = [
+  { num: 1, checked: false },
+  { num: 2, checked: true },
+  { num: 3, checked: true },
+  { num: 4, checked: false },
+  { num: 5, checked: true },
+  { num: 6, checked: true },
+  { num: 7, checked: true },
+  { num: 8, checked: true },
+]
+// 选中的是2,3,5,6
+// 后移
+// for (let i = numArr.length - 1; i > 0; i--) {
+//   if (Number(numArr[i].checked) < Number(numArr[i - 1].checked)) {
+//     let temp = numArr[i];
+//     temp = numArr[i - 1];
+//     numArr[i - 1] = numArr[i];
+//     numArr[i] = temp;
+//   }
+// }
+
+// 前移
+for (let i = 0; i <numArr.length - 1; i++) {
+  if (Number(numArr[i].checked) < Number(numArr[i +1].checked)) {
+    let temp = numArr[i];
+    temp = numArr[i + 1];
+    numArr[i + 1] = numArr[i];
+    numArr[i] = temp;
+  }
+}
+console.log(numArr);
