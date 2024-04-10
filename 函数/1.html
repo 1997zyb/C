@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      border: 1px solid red;
+      width: 300px;
+      line-height: 42px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="myDiv">
+    白日依山尽，
+    白日依山尽，
+    白日依山尽，
+    白日依山尽，
+    白日依山尽，
+    白日依山尽，
+    黄河入海流，
+    黄河入海流，
+    黄河入海流，
+    黄河入海流，
+    黄河入海流，
+  </div>
+</body>
+
+</html>
+<script>
+  var myDiv = document.getElementById("myDiv"); // 获取包含文本的div元素
+var lineHeight = getLineHeight(myDiv); // 获取每一行的高度
+console.log(myDiv.offsetHeight);
+var lineCount = Math.ceil(myDiv.offsetHeight / lineHeight); // 计算行数
+
+console.log("Line height: " + lineHeight + "px");
+console.log("Total lines: " + lineCount);
+
+function getLineHeight(element) {
+    var tempSpan = document.createElement("span"); // 创建临时span元素
+    tempSpan.style.visibility = "hidden";
+    tempSpan.style.position = "absolute";
+    tempSpan.style.whiteSpace = "nowrap"; // 防止文本换行
+    tempSpan.style.fontSize = window.getComputedStyle(element).fontSize;
+    tempSpan.style.lineHeight = window.getComputedStyle(element).lineHeight;
+    tempSpan.innerText = "A"; // 使用一个字符来计算行高
+
+    element.appendChild(tempSpan); // 将临时span添加到div中
+
+    var lineHeight = tempSpan.offsetHeight; // 获取临时span的高度
+
+    element.removeChild(tempSpan); // 移除临时span
+
+    return lineHeight;
+}
+</script>
