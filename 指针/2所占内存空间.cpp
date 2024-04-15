@@ -2,8 +2,8 @@
 using namespace std;
 
 /*
-  åœ¨32ä½æ“ä½œç³»ç»Ÿä¸­ï¼Œå ç”¨4ä¸ªå­—èŠ‚çš„å†…å­˜ç©ºé—´
-  åœ¨64ä½æ“ä½œç³»ç»Ÿä¸­ï¼Œå ç”¨8ä¸ªå­—èŠ‚çš„å†…å­˜ç©ºé—´
+  ÔÚ32Î»²Ù×÷ÏµÍ³ÖÐ£¬Õ¼ÓÃ4¸ö×Ö½ÚµÄÄÚ´æ¿Õ¼ä
+  ÔÚ64Î»²Ù×÷ÏµÍ³ÖÐ£¬Õ¼ÓÃ8¸ö×Ö½ÚµÄÄÚ´æ¿Õ¼ä
 
 */
 
@@ -11,8 +11,23 @@ int main() {
   int a = 10;
   int *p = &a;
   cout << *p << endl;
-  cout << sizeof(p) << endl;
-  cout << sizeof(int *) << endl;
-  cout << sizeof(char *) << endl;
-  cout << sizeof(double *) << endl;
+  // cout << sizeof(p) << endl;
+  // cout << sizeof(int *) << endl;
+  // cout << sizeof(char *) << endl;
+  // cout << sizeof(double *) << endl;
+
+  /*
+    ¿ÕÖ¸Õë   Ö¸ÕëÖ¸ÏòÄÚ´æ±àºÅÎª0µÄÄÇÒ»¿é¿Õ¼ä
+    ÓÃÍ¾£º³õÊ¼»¯Ö¸Õë±äÁ¿£¬ÎÞ·¨·ÃÎÊ
+    ±àºÅ0~255µÄÄÚ´æ¿Õ¼äÊÇÏµÍ³Õ¼ÓÃ£¬Òò´Ë²»¿É·ÃÎÊ
+  */
+  int *m = NULL;
+  *m = 100;
+  cout << m << endl; // Êä³ö²»ÁË
+
+  /*
+    Ò°Ö¸Õë   Ö¸ÕëÖ¸Ïò·Ç·¨µÄÄÚ´æ¿Õ¼ä
+  */
+  int *n = (int *)0X1100;
+  cout << *n << endl; // Êä³ö²»ÁË
 }
