@@ -8,7 +8,7 @@ struct Student {
   int score;
 };
 int main() {
-  struct Student stuArray[3] = {
+  struct Student stuArray[] = {
       {"张三", 14, 100},
       {"赵四", 15, 90},
       {"王五", 16, 80},
