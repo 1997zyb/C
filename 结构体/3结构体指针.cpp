@@ -15,7 +15,6 @@ int main() {
 
   // 通过指针指向结构体变量
   struct Student *p = &stu;
-
   // 通过指针访问结构体变量中的数据（->  横线，箭头）
   cout << "姓名是:" << p->name << "，年龄是:" << p->age
        << "，分数是:" << p->score << endl;
