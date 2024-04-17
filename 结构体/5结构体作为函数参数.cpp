@@ -18,6 +18,7 @@ void printS1(struct Student s) {
        << s.score << endl;
 };
 void printS2(struct Student *s) {
+  cout << s << endl;
   s->age = 200;
   cout << "里面的"
        << "姓名是：" << s->name << "，年龄是：" << s->age << "，分数是："
@@ -29,9 +30,9 @@ int main() {
   s.name = "张三";
   s.age = 12;
   s.score = 100;
-  printS1(s); // 值传递
-  // printS2(&s); // 地址传递
-  // cout << &s << endl; // 是一个地址
+  // printS1(s); // 值传递
+  printS2(&s); // 地址传递
+  cout << &s << endl; // 是一个地址
   cout << "外面的"
        << "姓名是：" << s.name << "，年龄是：" << s.age << "，分数是："
        << s.score << endl;

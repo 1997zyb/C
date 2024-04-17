@@ -16,10 +16,10 @@ int main() {
   int a = 10;
   int b = 10;
 
-  // const int *p = &a;
+  // const int *p = &a; // 常量指针
   // p = &b; // 指针指向可以改
 
-  int *const p = &a;
+  int *const p = &a; // 指针常量
   *p = 30;
   cout << "a的值是"<<a << endl;
 }
